@@ -1,7 +1,7 @@
 name = "LinearMixingModels"
 uuid = "b8ce4b42-e81b-4a39-a84a-67f74a9a16dd"
 authors = ["Invenia Technical Computing Corporation"]
-version = "0.1.10"
+version = "0.1.11"
 
 [deps]
 AbstractGPs = "99985d1d-32ba-4be9-9821-2ec096f28918"
