@@ -15,6 +15,24 @@ A package for implementing [Instantaneous Linear Mixing Models](https://arxiv.or
 julia> Pkg.add("LinearMixingModels")
 ```
 
-## API
+## Simple usage example
 
-## Example
+```julia
+julia> H = Orthogonal(U, Diagonal(S))
+
+julia> latent_gp = independent_mogp(GP(Matern52Kernel()), GP(Matern32Kernel())]);
+
+julia> oilmm = ILMM(latent_gp, H);
+
+julia> oilmmx = oilmm(x_train, 1e-6);
+
+julia> y_train = rand(oilmmx);
+
+julia> p_oilmmx = posterior(oilmmx, y_train);
+
+julia> po = p_oilmmx(x_test, 1e-6);
+
+julia> marg_po = marginals(po)
+
+julia> rand_po = rand(rng, po)
+```
